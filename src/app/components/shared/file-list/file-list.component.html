@@ -1,0 +1,10 @@
+<div class="file-list">
+  @for (header of headers; track header) {
+    <div class="fl-header">{{ header }}</div>
+  }
+  @for (file of files; track file.name) {
+    <div>{{file.name}}</div>
+    <div>{{file.size / 1024 | number:'1.0-0'}}KB</div>
+    <div>{{file.dateAdded | date:'dd/MM/yyyy, hh:mm'}}</div>
+  }
+</div>

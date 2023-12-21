@@ -1,0 +1,19 @@
+.file-list {
+  display: grid;
+  grid-row-gap: 1rem;
+  grid-template-columns: 3fr 1.5fr 1.5fr;
+  margin: 15px;
+
+  .fl-header {
+    background-color: rgba(212, 175, 25, 0.3);
+    height: 25px;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+  }
+
+  div {
+    padding: 0 5px;
+  }
+
+}
