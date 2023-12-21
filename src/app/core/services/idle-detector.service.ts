@@ -30,7 +30,6 @@ export class IdleDetectorService {
       .select(selectUserLoggedIn)
       .pipe(
         tap(isLoggedIn => {
-          console.log('USER LOGGED CHANGED', isLoggedIn);
           this.isUserLoggedIn = isLoggedIn;
         })
       )
@@ -39,7 +38,6 @@ export class IdleDetectorService {
       .select(selectIsUploading)
       .pipe(
         tap(isUploading => {
-          console.log('USER UPLOADING CHANGED', isUploading);
           this.isUserUploading = isUploading;
         })
       )
@@ -68,7 +66,6 @@ export class IdleDetectorService {
             if (this.isUserUploading) {
               this.store.dispatch(userActivity({ activityType: 'upload' }));
             } else {
-              console.log('LOGGING OUT DUE TO INACTIVITY');
               this.store.dispatch(logout());
             }
             return timer(1000);
